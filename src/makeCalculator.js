@@ -7,22 +7,22 @@ function makeCalculator() {
   let result = 0;
 
   return {
-    add: function (number) {
+    add(number) {
       result += number;
 
       return result;
     },
-    subtract: function (number) {
+    subtract(number) {
       result -= number;
 
       return result;
     },
-    multiply: function (number) {
+    multiply(number) {
       result *= number;
 
       return result;
     },
-    divide: function (number) {
+    divide(number) {
       if (number === 0) {
         return null;
       }
@@ -30,13 +30,13 @@ function makeCalculator() {
 
       return result;
     },
-    reset: function () {
+    reset() {
       result = 0;
 
       return this;
     },
-    operate: function (callback, number) {
-      result = callback.call(this, number);
+    operate(callback, number) {
+      result = callback(number);
 
       return this;
     },
